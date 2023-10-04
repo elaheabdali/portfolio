@@ -1,10 +1,14 @@
 'use client';
 import SectionHeading from './section-heading';
 import { motion } from 'framer-motion';
+import { useSectionInView } from '@/lib/hooks';
 
 const About = () => {
+  const { ref } = useSectionInView('About');
+
   return (
     <motion.section
+      ref={ref}
       id='about'
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
