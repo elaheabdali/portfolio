@@ -1,7 +1,6 @@
-"use client";
-
-import type { SectionName } from "@/lib/types";
-import React, { useState, createContext, useContext } from "react";
+'use client';
+import type { SectionName } from '@/lib/types';
+import { useState, createContext, useContext } from 'react';
 
 type ActiveSectionContextProviderProps = {
   children: React.ReactNode;
@@ -17,11 +16,11 @@ type ActiveSectionContextType = {
 export const ActiveSectionContext =
   createContext<ActiveSectionContextType | null>(null);
 
-export default function ActiveSectionContextProvider({
+const ActiveSectionContextProvider = ({
   children,
-}: ActiveSectionContextProviderProps) {
-  const [activeSection, setActiveSection] = useState<SectionName>("Home");
-  const [timeOfLastClick, setTimeOfLastClick] = useState(0); // we need to keep track of this to disable the observer temporarily when user clicks on a link
+}: ActiveSectionContextProviderProps) => {
+  const [activeSection, setActiveSection] = useState<SectionName>('Home');
+  const [timeOfLastClick, setTimeOfLastClick] = useState(0);
 
   return (
     <ActiveSectionContext.Provider
@@ -35,16 +34,16 @@ export default function ActiveSectionContextProvider({
       {children}
     </ActiveSectionContext.Provider>
   );
-}
+};
 
-export function useActiveSectionContext() {
+export const useActiveSectionContext = () => {
   const context = useContext(ActiveSectionContext);
 
   if (context === null) {
-    throw new Error(
-      "useActiveSectionContext must be used within an ActiveSectionContextProvider"
-    );
+    throw new Error('Error context');
   }
 
   return context;
-}
+};
+
+export default ActiveSectionContextProvider;
