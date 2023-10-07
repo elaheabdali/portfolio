@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import SectionHeading from './section-heading';
-import { projectsData } from '@/lib/data';
+import { projectsData } from '../lib/data';
 import Image from 'next/image';
 import { useScroll, motion, useTransform } from 'framer-motion';
 
@@ -13,10 +13,11 @@ const Project = ({ title, description, tags, imageUrl }: ProjectProps) => {
     target: ref,
     offset: ['0 1', '1.33 1'],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0,1], [0.8,1])
-  const opacityProgress = useTransform(scrollYProgress, [0,1], [0.6,1])
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
-    <motion.div className='group mb-3 sm:mb-8 last:mb-0'
+    <motion.div
+      className='group mb-3 sm:mb-8 last:mb-0'
       style={{
         scale: scaleProgress,
         opacity: opacityProgress,
@@ -27,7 +28,8 @@ const Project = ({ title, description, tags, imageUrl }: ProjectProps) => {
         className='relative rounded-lg bg-gray-100 max-w-[42rem] 
     border border-black/5 overflow-hidden sm:pr-8
      sm:h-[20rem] group-even:even:pl-8
-     hover:bg-gray-200 transition'
+     hover:bg-gray-200 transition dark:bg-white/10
+     dark:hover:bg-white/20 dark-text-white'
       >
         <div
           className='group-even:ml-[18rem] flex flex-col h-full
@@ -36,7 +38,7 @@ const Project = ({ title, description, tags, imageUrl }: ProjectProps) => {
           <h3 className='text-2xl font-semibold'>{title}</h3>
           <p
             className='mt-2 leading-relaxed
-      text-gray-700'
+      text-gray-700 dark-text-white/70'
           >
             {description}{' '}
           </p>
@@ -44,7 +46,7 @@ const Project = ({ title, description, tags, imageUrl }: ProjectProps) => {
             {tags.map((tag, index) => (
               <li
                 className='bg-black/[0.7] px-3 py-1 text-[0.7rem]
-          uppercase tracking-wider text-white rounded-full'
+          uppercase tracking-wider dark-text-white/70 text-white rounded-full'
                 key={index}
               >
                 {tag}
