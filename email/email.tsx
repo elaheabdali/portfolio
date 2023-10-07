@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 
 import {
@@ -18,7 +19,7 @@ type ContactFormEmailProps = {
   senderEmail: string;
 };
 
-const Email = ({ message, senderEmail }: ContactFormEmailProps) => {
+const ContactFormEmail = ({ message, senderEmail }: ContactFormEmailProps) => {
   return (
     <Html>
       <Head />
@@ -41,4 +42,4 @@ const Email = ({ message, senderEmail }: ContactFormEmailProps) => {
   );
 };
 
-export default Email;
+export default ContactFormEmail;
