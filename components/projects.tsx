@@ -1,9 +1,9 @@
 'use client';
 import SectionHeading from './section-heading';
-import { projectsData } from '@/lib/data';
+import { projectsData } from '../lib/data';
 import Project from './project';
 import React from 'react';
-import { useSectionInView } from '@/lib/hooks';
+import { useSectionInView } from '../lib/hooks';
 
 const Projects = () => {
   const { ref } = useSectionInView('Projects', 0.5);
