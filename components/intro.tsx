@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { HiDownload } from 'react-icons/hi';
 import { FaGithubSquare } from 'react-icons/fa';
-import { useSectionInView } from '@/lib/hooks';
-import { useActiveSectionContext } from '@/context/active-section-context';
+import { useSectionInView } from '../lib/hooks';
+import { useActiveSectionContext } from '../context/active-section-context';
 
 const Intro = () => {
   const { ref } = useSectionInView('Home', 0.5);
@@ -28,7 +28,7 @@ const Intro = () => {
             transition={{ type: 'tween', duration: 0.2 }}
           >
             <Image
-              src='https://images.unsplash.com/photo-1605433235628-489951ba1978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDg5fFM0TUtMQXNCQjc0fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+              src='/portfolio/public/po.jpg'
               alt='Elahe Abdali'
               width='192'
               height='192'
@@ -96,7 +96,7 @@ const Intro = () => {
         <a
           className='group outline-none focus:scale-110 hover:scale-110
           active:scale-105 transition cursor-pointer
-          borderBlack 
+          borderBlack
         bg-white px-7 py-3 flex items-center gap-2 rounded-full'
           href='/public/CV.pdf'
           download
