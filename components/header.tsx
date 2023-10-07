@@ -33,10 +33,11 @@ const Header = () => {
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
-                className={clsx( 
+                className={clsx(
                   'flex w-full items-center justify-center dark:text-gray-500 dark:hover:text-gray-300  px-3 py-3 hover:text-gray-950 transition',
                   {
-                    'text-gray-950 dark:text-gray-200': activeSection === link.name,
+                    'text-gray-950 dark:text-gray-200':
+                      activeSection === link.name,
                   }
                 )}
                 href={link.hash}
@@ -50,7 +51,7 @@ const Header = () => {
                 {link.name === activeSection && (
                   <motion.span
                     className='bg-gray-100 rounded-full
-                absolute inset-0 -z-10'
+                absolute inset-0 -z-10 dark:bg-gray-800'
                     layoutId='activeSection'
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   ></motion.span>

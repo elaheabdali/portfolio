@@ -41,10 +41,12 @@ const Contact = () => {
 
           toast.success('Email sent successfully!');
         }}
-        className='mt-10 flex flex-col'
+        className='mt-10 flex flex-col dark:text-black'
       >
         <input
-          className='px-4 borderBlack h-14 rounded-lg'
+          className='px-4 borderBlack h-14 rounded-lg
+          dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-80
+          transition-all dark:outline-none'
           placeholder='Your email'
           type='email'
           name='senderEmail'
@@ -56,7 +58,8 @@ const Contact = () => {
           required
           maxLength={5000}
           className='h-52 my-3 rounded-lg borderBlack
-        p-4'
+        p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-80
+        transition-all dark:outline-none'
           placeholder='Your message'
         />
 
