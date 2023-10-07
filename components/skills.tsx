@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import SectionHeading from './section-heading';
-import { skillsData } from '@/lib/data';
-import { useSectionInView } from '@/lib/hooks';
+import { skillsData } from '../lib/data';
+import { useSectionInView } from '../lib/hooks';
 import { motion } from 'framer-motion';
 
 const fadeInAnimation = {
@@ -28,7 +28,7 @@ const Skills = () => {
       <SectionHeading>My skills</SectionHeading>
       <ul
         className='flex flex-wrap justify-center gap-2
-      text-lg text-gray-800'
+      text-lg text-gray-800 dark:bg-white/10 dark:text-white/80'
       >
         {skillsData.map((skill, index) => (
           <motion.li
